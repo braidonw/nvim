@@ -46,4 +46,7 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'},
         }
     }
+
+    use ({"github/copilot.vim", branch='release'})
+
 end)
