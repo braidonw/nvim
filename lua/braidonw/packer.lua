@@ -17,6 +17,7 @@ return require('packer').startup(function(use)
         end
     })
     use 'folke/tokyonight.nvim'
+    use { "ellisonleao/gruvbox.nvim" }
 
     use ('nvim-treesitter/playground')
     use 'theprimeagen/harpoon'
