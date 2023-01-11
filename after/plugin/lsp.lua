@@ -56,3 +56,7 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true,
 })
+
+require"lspconfig".elixirls.setup{
+    cmd = {"/home/braidon/elixirls/language_server.sh"}
+}
