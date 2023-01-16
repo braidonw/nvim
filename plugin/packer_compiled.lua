@@ -150,9 +150,9 @@ _G.packer_plugins = {
     path = "/home/braidon/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  neosolarized = {
+  ["neosolarized.nvim"] = {
     loaded = true,
-    path = "/home/braidon/.local/share/nvim/site/pack/packer/start/neosolarized",
+    path = "/home/braidon/.local/share/nvim/site/pack/packer/start/neosolarized.nvim",
     url = "https://github.com/svrana/neosolarized.nvim"
   },
   ["nvim-cmp"] = {

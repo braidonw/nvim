@@ -4,6 +4,14 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
+        'svrana/neosolarized.nvim',
+        requires = { 'tjdevries/colorbuddy.nvim' },
+        config = function()
+            require('neosolarized').setup({italic_comments = true})
+        end
+    }
+
+    use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
@@ -28,11 +36,6 @@ return require('packer').startup(function(use)
         end
     })
     use({ "catppuccin/nvim", as = "catppuccin" })
-    use({
-        'svrana/neosolarized.nvim',
-        as = "neosolarized",
-        requires = { 'tjdevries/colorbuddy.nvim' }
-    })
 
     use('nvim-treesitter/playground')
     use 'theprimeagen/harpoon'
