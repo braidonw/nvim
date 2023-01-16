@@ -17,8 +17,9 @@ return require('packer').startup(function(use)
             vim.cmd('colorscheme rose-pine')
         end
     })
+
     use 'folke/tokyonight.nvim'
-    use ({ "ellisonleao/gruvbox.nvim",
+    use({ "ellisonleao/gruvbox.nvim",
         config = function()
             require('gruvbox').setup({
                 bold = false,
@@ -27,6 +28,11 @@ return require('packer').startup(function(use)
         end
     })
     use({ "catppuccin/nvim", as = "catppuccin" })
+    use({
+        'svrana/neosolarized.nvim',
+        as = "neosolarized",
+        requires = { 'tjdevries/colorbuddy.nvim' }
+    })
 
     use('nvim-treesitter/playground')
     use 'theprimeagen/harpoon'
