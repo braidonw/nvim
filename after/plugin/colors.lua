@@ -1,9 +1,8 @@
 function ColorMyPencils(color)
-    color = color or "neosolarized"
+    color = color or "nightfox"
+    -- vim.g.everforest_background = 'hard'
     vim.cmd.colorscheme(color)
-    SetupNeoS()
-    -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    --SetupNeoS()
 end
 
 function SetupNeoS()
@@ -11,7 +10,8 @@ function SetupNeoS()
     if (not status) then return end
 
     n.setup({
-        comment_italics = true
+        comment_italics = true,
+        background_set = true
     })
 
     local cb = require('colorbuddy.init')
@@ -40,4 +40,7 @@ function SetupNeoS()
     Group.new("DiagnosticUnderlineInfo", colors.none, colors.none, styles.undercurl, cInfo)
     Group.new("DiagnosticUnderlineHint", colors.none, colors.none, styles.undercurl, cHint)
 end
+
+vim.g.sonokai_style = 'espresso'
+
 ColorMyPencils()
