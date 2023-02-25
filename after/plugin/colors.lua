@@ -5,6 +5,7 @@ function ColorMyPencils(color)
     --SetupNeoS()
 end
 
+
 function SetupNeoS()
     local status, n = pcall(require, "neosolarized")
     if (not status) then return end
@@ -41,6 +42,6 @@ function SetupNeoS()
     Group.new("DiagnosticUnderlineHint", colors.none, colors.none, styles.undercurl, cHint)
 end
 
-vim.g.sonokai_style = 'espresso'
+vim.g.sonokai_style = ''
 
 ColorMyPencils()
