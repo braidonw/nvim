@@ -18,6 +18,7 @@ return {
           "startuptime",
           "Outline",
         },
+        --   test
         on_colors = function(c)
           -- local hsluv = require("tokyonight.hsluv")
           -- local function randomColor(color)
