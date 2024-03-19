@@ -1,10 +1,31 @@
 return {
   {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "tokyonight",
+    },
+  },
+  {
+    "ribru17/bamboo.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("bamboo").setup({
+        transparent = true,
+        namespaces = { italic = false },
+        highlights = {
+          ["@module.elixir"] = { link = "@type" },
+        },
+      })
+    end,
+  },
+
+  {
     "tokyonight.nvim",
     priority = 1000,
     opts = function()
       return {
-        style = "moon",
+        style = "night",
         -- transparent = true,
         -- styles = {
         --   sidebars = "transparent",
