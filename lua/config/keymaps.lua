@@ -5,6 +5,9 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
+-- Jumplist
+keymap.set("n", "<C-m>", "<C-i>", opts)
+
 -- -- Disable continuations
 keymap.set("n", "<Leader>o", "o<Esc>^Da", opts)
 keymap.set("n", "<Leader>O", "O<Esc>^Da", opts)
