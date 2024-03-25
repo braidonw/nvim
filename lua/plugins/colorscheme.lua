@@ -80,6 +80,9 @@ return {
   {
     "ellisonleao/gruvbox.nvim",
     config = function()
+      require("notify").setup({
+        background_colour = "#000000",
+      })
       require("gruvbox").setup({
         terminal_colors = true, -- add neovim terminal colors
         undercurl = true,
