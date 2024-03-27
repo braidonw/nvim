@@ -2,8 +2,23 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa",
+      colorscheme = "bamboo",
     },
+  },
+
+  {
+    "edeneast/nightfox.nvim",
+    config = function()
+      require("nightfox").setup({
+        options = {},
+        groups = {
+
+          all = {
+            ["@module.elixir"] = { link = "@type" },
+          },
+        },
+      })
+    end,
   },
 
   {
