@@ -2,8 +2,45 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "bamboo",
+      colorscheme = "catppuccin",
     },
+  },
+
+  {
+    "ribru17/bamboo.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("bamboo").setup({
+        -- transparent = true,
+        toggle_style_key = "<leader>uq", -- Keybind to toggle theme style. Leave it nil to disable it, or set it to a string, e.g. "<leader>ts"
+        toggle_style_list = { "vulgaris", "light" },
+        namespaces = { italic = false },
+        highlights = {
+          ["@module.elixir"] = { link = "@type" },
+        },
+        code_style = {
+          strings = { italic = true },
+        },
+      })
+    end,
+  },
+
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      require("catppuccin").setup({
+        custom_highlights = function(colors)
+          return {
+            ["@module.elixir"] = { link = "@type" },
+          }
+        end,
+
+        transparent_background = true,
+      })
+    end,
   },
 
   {
