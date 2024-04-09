@@ -66,10 +66,10 @@ return {
         undercurl = true, -- enable undercurls
         commentStyle = { italic = true },
         functionStyle = {},
-        keywordStyle = { italic = true },
+        keywordStyle = { italic = false },
         statementStyle = { bold = true },
         typeStyle = {},
-        transparent = false, -- do not set background color
+        transparent = true, -- do not set background color
         dimInactive = false, -- dim inactive window `:h hl-NormalNC`
         terminalColors = true, -- define vim.g.terminal_color_{0,17}
         colors = { -- add/modify theme and palette colors
@@ -132,6 +132,7 @@ return {
   {
     "ellisonleao/gruvbox.nvim",
     config = function()
+      ---@diagnostic disable-next-line: missing-fields
       require("notify").setup({
         background_colour = "#000000",
       })
@@ -157,6 +158,14 @@ return {
         palette_overrides = {},
         overrides = {
           ["@module.elixir"] = { link = "@type" },
+          ["@tag.heex"] = { link = "GruvboxAqua" },
+          ["@tag.delimiter.heex"] = { link = "GruvboxGray" },
+          ["@operator.heex"] = { link = "GruvboxGray" },
+          ["@punctuation.bracket.elixir"] = { link = "GruvboxGray" },
+          ["@punctuation.delimiter.heex"] = { link = "GruvboxGray" },
+          ["@punctuation.delimiter.elixir"] = { link = "GruvboxGray" },
+          ["@punctuation.special.elixir"] = { link = "GruvboxAqua" },
+          Operator = { link = "GruvboxGray" },
         },
         dim_inactive = false,
         transparent_mode = true,
@@ -164,20 +173,6 @@ return {
     end,
   },
 
-  {
-    "ribru17/bamboo.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("bamboo").setup({
-        transparent = true,
-        namespaces = { italic = false },
-        highlights = {
-          ["@module.elixir"] = { link = "@type" },
-        },
-      })
-    end,
-  },
   {
     "craftzdog/solarized-osaka.nvim",
     lazy = false,
