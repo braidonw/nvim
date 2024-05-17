@@ -2,8 +2,17 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "catppuccin",
     },
+  },
+
+  { "navarasu/onedark.nvim" },
+
+  {
+    "nyoom-engineering/oxocarbon.nvim",
+    config = function()
+      vim.api.nvim_set_hl(0, "@module.elixir", { link = "@type" })
+    end,
   },
 
   {
@@ -22,32 +31,35 @@ return {
         code_style = {
           strings = { italic = true },
         },
+        transparent = true,
       })
     end,
   },
 
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-      require("catppuccin").setup({
-        custom_highlights = function(colors)
-          return {
-            ["@module.elixir"] = { link = "@type" },
-          }
-        end,
-
-        transparent_background = true,
-      })
-    end,
-  },
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   priority = 1000,
+  --   config = function()
+  --     require("catppuccin").setup({
+  --       custom_highlights = function(_colors)
+  --         return {
+  --           ["@module.elixir"] = { link = "@type" },
+  --         }
+  --       end,
+  --
+  --       transparent_background = true,
+  --     })
+  --   end,
+  -- },
 
   {
     "edeneast/nightfox.nvim",
     config = function()
       require("nightfox").setup({
-        options = {},
+        options = {
+          transparent = true,
+        },
         groups = {
 
           all = {
@@ -154,7 +166,7 @@ return {
         invert_tabline = false,
         invert_intend_guides = false,
         inverse = true, -- invert background for search, diffs, statuslines and errors
-        contrast = "", -- can be "hard", "soft" or empty string
+        contrast = "hard", -- can be "hard", "soft" or empty string
         palette_overrides = {},
         overrides = {
           ["@module.elixir"] = { link = "@type" },
